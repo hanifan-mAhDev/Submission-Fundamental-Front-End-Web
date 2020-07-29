@@ -16,7 +16,7 @@ class Jumbotron extends HTMLElement {
             width: 100%;
             opacity: 80%;
             padding: 200px;
-            background-image: url("src/image/meal.jpg");
+            background-image: url("image/meal.jpg");
          }
        </style>
        `;

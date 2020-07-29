@@ -41,9 +41,9 @@ class AppBar extends HTMLElement {
                 padding-right: 10px;
            }
        </style>
-       <img src="src/image/img-header.png" alt="logo"/>
+       <img src="image/img-header.png" alt="logo"/>
        <figure>
-            <img src="src/image/abdu.png">
+            <img src="image/abdu.png">
        </figure>       
        <p>Mochamad Abdu Hanifan || abduhanifan346@yahoo.com </p>
        `;

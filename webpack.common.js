@@ -1,5 +1,6 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
    entry: "./src/app.js",
@@ -20,37 +21,20 @@ module.exports = {
                }
             ]
          },
-         {
-            test: /\.scss$/,
-            use: [
-                {
-                    loader: "sass-loader"
-                }
-            ],
-        },
-        {
-            test: /\.(jpg|png)$/,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'img/',
-                        publicPath: 'img/'
-                    }
-                }
-            ]
-        },
-        {
-            test: /\.html$/,
-            use: ['html-loader']
-        }
       ]
    },
    plugins: [
       new HtmlWebpackPlugin({
          template: "./src/index.html",
          filename: "index.html"
+      }),
+      new CopyWebpackPlugin({
+         patterns: [
+            {
+               from: path.resolve(__dirname, 'image'),
+               to: path.resolve(__dirname, 'dist/image')
+            }
+         ]
       })
    ]
 }
